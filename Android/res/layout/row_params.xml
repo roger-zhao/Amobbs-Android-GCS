@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/params_row_bg"
+    android:minHeight="48dp"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/params_row_name"
+        style="@style/paramRowLabel.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/params_row_value"
+        android:layout_toStartOf="@+id/params_row_value"
+        android:clickable="false"
+        android:gravity="center_vertical|start"
+        tools:text="PARAMETER NAME" />
+
+    <TextView
+        android:id="@+id/params_row_desc"
+        style="@style/paramRowLabel.Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/params_row_name"
+        android:layout_alignStart="@+id/params_row_name"
+        android:layout_below="@+id/params_row_name"
+        android:layout_marginTop="5dp"
+        android:layout_toLeftOf="@+id/params_row_value"
+        android:layout_toStartOf="@+id/params_row_value"
+        android:clickable="false"
+        android:gravity="center_vertical|start"
+        tools:text="Parameter Description" />
+
+    <EditText
+        android:id="@+id/params_row_value"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:digits="0123456789.,-"
+        android:gravity="end|center_vertical"
+        android:inputType="number|text"
+        android:selectAllOnFocus="true"
+        tools:text="param " />
+
+</RelativeLayout>

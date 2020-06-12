@@ -1,0 +1,44 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+
+    ext {
+        kotlin_version = '1.0.4'
+
+        support_lib_version = '23.4.0'
+        play_services_version = '9.4.0'
+
+        android_build_sdk_version = 23
+        android_build_tools_version ='23.0.3'
+        android_build_target_sdk_version = 22
+        android_build_min_sdk_version = 15
+    }
+
+    repositories {
+        jcenter()
+        mavenCentral()
+        google()
+    }
+    dependencies {
+        // Gradle构建系统
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        // Kotlin支持
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // butterknife
+//        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        mavenCentral()
+        // Bmob的maven仓库地址，必须填写
+        maven { url "https://raw.github.com/bmob/bmob-android-sdk/master" }
+        maven { url "https://jitpack.io" }
+
+        flatDir {
+            dirs 'libs'
+        }
+        google()
+    }
+}

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/map_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <org.farring.gcs.view.FitsSystemWindowsRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <include
+            layout="@layout/button_my_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="8dp" />
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="15dp">
+
+            <FrameLayout
+                android:id="@+id/download_map_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/download_map_warning"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:background="@android:color/holo_orange_light"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:visibility="gone"
+                    tools:visibility="gone">
+
+                    <me.grantland.widget.AutofitTextView
+                        style="@style/AlertMessage.Title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lines="1"
+                        android:text="@string/instructions_map_download_warning" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/download_map_instructions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:visibility="visible"
+                    tools:visibility="visible">
+
+                    <me.grantland.widget.AutofitTextView
+                        style="@style/AlertMessage.Title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lines="1"
+                        android:text="@string/instructions_map_download_selection" />
+
+                    <me.grantland.widget.AutofitTextView
+                        style="@style/AlertMessage.Subtitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lines="1"
+                        android:text="@string/instructions_tap_to_save_map" />
+
+                </LinearLayout>
+            </FrameLayout>
+
+            <RelativeLayout
+                android:id="@+id/download_map_progress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/map_bottom_bar_close_button"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:scaleType="center"
+                    android:src="@drawable/close" />
+
+                <ProgressBar
+                    android:id="@+id/map_download_progress_bar"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:layout_toLeftOf="@+id/map_bottom_bar_close_button"
+                    android:layout_toStartOf="@+id/map_bottom_bar_close_button"
+                    android:visibility="visible"
+                    tools:visibility="visible" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+    </org.farring.gcs.view.FitsSystemWindowsRelativeLayout>
+
+</FrameLayout>

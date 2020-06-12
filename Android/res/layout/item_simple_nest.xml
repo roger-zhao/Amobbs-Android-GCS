@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_light"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="TopView"
+        android:textSize="20sp"
+        android:visibility="gone" />
+
+    <com.tubb.smrv.SwipeMenuLayout
+        android:id="@+id/swipeMenuLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@id/smContentView"
+            layout="@layout/list_histroy_tlog_item" />
+
+        <include
+            android:id="@id/smMenuView"
+            layout="@layout/item_simple_menu" />
+
+    </com.tubb.smrv.SwipeMenuLayout>
+
+</LinearLayout>

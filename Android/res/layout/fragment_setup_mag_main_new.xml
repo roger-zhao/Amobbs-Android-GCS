@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<org.farring.gcs.view.CustomerScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView style="@style/SettingCardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:text="常规指南针设置"
+                    android:visibility="gone"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+
+                        <com.rey.material.widget.CheckBox
+                            android:id="@+id/checkBox_compassAll"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:text="启用指南针" />
+
+                        <com.rey.material.widget.CheckBox
+                            android:id="@+id/checkBox_AutoDeclination"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:checked="true"
+                            android:text="自动磁偏角" />
+
+                        <com.rey.material.widget.CheckBox
+                            android:id="@+id/checkBox_AutoOffset"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:checked="false"
+                            android:text="自动偏移量" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="主指南针选择:"
+                            android:visibility="gone"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/RadioBtn_CompassMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/RadioBtn_Compass1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:visibility="gone"
+                                android:text="Compass1" />
+
+                            <RadioButton
+                                android:id="@+id/RadioBtn_Compass2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:visibility="gone"
+                                android:text="Compass2" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView style="@style/SettingCardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <com.rey.material.widget.CheckBox
+                    android:id="@+id/Checkbox_Compass2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:checked="false"
+                    android:text="启用指南针2"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.rey.material.widget.CheckBox
+                        android:id="@+id/Checkbox_Compass2_External"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:checked="false"
+                        android:text="外部安装  安装方向:" />
+
+                    <com.rey.material.widget.Spinner
+                        android:id="@+id/Spinner_Compass2External"
+                        style="@style/Material.Widget.Spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:rd_style="@style/Material.Drawable.Ripple.Wave" />
+                </LinearLayout>
+
+                <me.grantland.widget.AutofitTextView
+                    android:id="@+id/TextView_Compass2_Offset"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:visibility="gone"
+                    android:checked="false"
+                    android:text="偏差:X:0,Y:0,Z:0"
+                    android:textColor="#85daff"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView style="@style/SettingCardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:text="校准指南针"
+                    android:visibility="gone"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <me.grantland.widget.AutofitTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="指南针："
+                        android:textColor="#2196f3" />
+
+                    <com.daimajia.numberprogressbar.NumberProgressBar
+                        android:id="@+id/compass1NumberProgressBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        app:progress_reached_bar_height="15dp"
+                        app:progress_reached_color="#9F79EE"
+
+                        app:progress_text_color="#9F79EE"
+                        app:progress_text_offset="1dp"
+
+                        app:progress_text_size="14sp"
+                        app:progress_unreached_bar_height="15dp"
+                        app:progress_unreached_color="#CCCCCC" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    >
+
+                    <me.grantland.widget.AutofitTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:visibility="gone"
+                        android:text="磁罗盘2："
+                        android:textColor="#2196f3" />
+
+                    <com.daimajia.numberprogressbar.NumberProgressBar
+                        android:id="@+id/compass2NumberProgressBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        app:progress_reached_bar_height="15dp"
+                        app:progress_reached_color="#436EEE"
+
+                        app:progress_text_color="#436EEE"
+                        app:progress_text_offset="1dp"
+
+                        app:progress_text_size="14sp"
+                        app:progress_unreached_bar_height="15dp"
+                        app:progress_unreached_color="#CCCCCC"
+                        android:visibility="gone"
+                         />
+                </LinearLayout>
+
+                <me.grantland.widget.AutofitTextView
+                    android:id="@+id/stateText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/setup_mag_start"
+                    android:textColor="#2196f3"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.rey.material.widget.Button
+                        android:id="@+id/Btn_Start"
+                        style="@style/RaiseWaveColorButtonRippleStyle"
+                        android:layout_width="110dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:text="开始校准"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
+                        android:textColor="#ffffff"
+                        app:rd_delayClick="afterRelease" />
+
+                    <com.rey.material.widget.Button
+                        android:id="@+id/Btn_Cancel"
+                        style="@style/RaiseWaveColorButtonRippleStyle"
+                        android:layout_width="110dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:text="取消校准"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
+                        android:textColor="#ffffff"
+                        app:rd_delayClick="afterRelease" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView style="@style/SettingCardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.rey.material.widget.CheckBox
+                    android:id="@+id/Checkbox_Compass1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="启用指南针1"
+                    android:visibility="gone"
+                    android:checked="true"
+                    android:textStyle="bold" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.rey.material.widget.CheckBox
+                        android:id="@+id/Checkbox_Compass1_External"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:checked="false"
+                        android:text="外部安装  安装方向:" />
+
+
+                    <com.rey.material.widget.Spinner
+                        android:id="@+id/Spinner_Compass1External"
+                        style="@style/Material.Widget.Spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:rd_style="@style/Material.Drawable.Ripple.Wave" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/TextView_Compass1_Offset"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="偏差:[0,0,0]"
+                    android:textColor="#85daff"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</org.farring.gcs.view.CustomerScrollView>

@@ -1,0 +1,200 @@
+<org.farring.gcs.view.CustomerScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <org.farring.gcs.view.FillBar.FillBar
+                    android:id="@+id/fillBar_throttle"
+                    android:layout_width="@dimen/fillbar_thickness"
+                    android:layout_height="@dimen/fillbar_length"
+                    android:layout_alignBottom="@+id/stickLeft"
+                    android:layout_alignTop="@+id/stickLeft"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/stickLeft" />
+
+                <org.farring.gcs.view.RcStick.RcStick
+                    android:id="@+id/stickLeft"
+                    android:layout_width="@dimen/setup_rc_stick_width"
+                    android:layout_height="@dimen/setup_rc_stick_height"
+                    android:background="#FFFF99"
+                    android:layout_alignParentRight="true" />
+
+                <TextView
+                    android:id="@+id/thr_yaw_text"
+                    style="@style/rc_textTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/fillBar_yaw"
+                    android:layout_below="@+id/fillBar_yaw"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="油门: 1000\nY航向: 1500" />
+
+                <org.farring.gcs.view.FillBar.FillBar
+                    android:id="@+id/fillBar_yaw"
+                    android:layout_width="@dimen/fillbar_length"
+                    android:layout_height="@dimen/fillbar_thickness"
+                    android:layout_alignLeft="@+id/stickLeft"
+                    android:layout_alignRight="@+id/stickLeft"
+                    android:layout_below="@+id/stickLeft"
+                    android:layout_marginTop="25dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <org.farring.gcs.view.FillBar.FillBar
+                    android:id="@+id/fillBar_pitch"
+                    android:layout_width="@dimen/fillbar_thickness"
+                    android:layout_height="@dimen/fillbar_length"
+                    android:layout_alignBottom="@+id/stickRight"
+                    android:layout_alignTop="@+id/stickRight"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/stickRight" />
+
+                <org.farring.gcs.view.RcStick.RcStick
+                    android:id="@+id/stickRight"
+                    android:layout_width="@dimen/setup_rc_stick_width"
+                    android:layout_height="@dimen/setup_rc_stick_height"
+                    android:layout_alignParentLeft="true" />
+
+                <TextView
+                    android:id="@+id/roll_pitch_text"
+                    style="@style/rc_textTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/fillBar_roll"
+                    android:layout_below="@+id/fillBar_roll"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="左右: 1500\n前后: 1500" />
+
+                <org.farring.gcs.view.FillBar.FillBar
+                    android:id="@+id/fillBar_roll"
+                    android:layout_width="@dimen/fillbar_length"
+                    android:layout_height="@dimen/fillbar_thickness"
+                    android:layout_alignLeft="@+id/stickRight"
+                    android:layout_alignRight="@+id/stickRight"
+                    android:layout_below="@+id/stickRight"
+                    android:layout_marginTop="25dp" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <org.farring.gcs.view.FillBar.FillBar
+                    android:id="@+id/fillBar_ch_5"
+                    android:layout_width="@dimen/fillbar_length"
+                    android:layout_height="@dimen/fillbar_thickness"
+                    android:layout_marginBottom="5dp" />
+
+                <TextView
+                    android:id="@+id/ch_5_text"
+                    style="@style/rc_textTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="摇杆 5: 1500" />
+
+                <org.farring.gcs.view.FillBar.FillBar
+                    android:id="@+id/fillBar_ch_6"
+                    android:layout_width="@dimen/fillbar_length"
+                    android:layout_height="@dimen/fillbar_thickness"
+                    android:layout_marginBottom="5dp" />
+
+                <TextView
+                    android:id="@+id/ch_6_text"
+                    style="@style/rc_textTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="摇杆 6: 1500" />
+
+                <org.farring.gcs.view.FillBar.FillBar
+                    android:id="@+id/fillBar_ch_7"
+                    android:layout_width="@dimen/fillbar_length"
+                    android:layout_height="@dimen/fillbar_thickness"
+                    android:layout_marginBottom="5dp" />
+
+                <TextView
+                    android:id="@+id/ch_7_text"
+                    style="@style/rc_textTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="摇杆 7: 1500" />
+
+                <org.farring.gcs.view.FillBar.FillBar
+                    android:id="@+id/fillBar_ch_8"
+                    android:layout_width="@dimen/fillbar_length"
+                    android:layout_height="@dimen/fillbar_thickness"
+                    android:layout_marginBottom="5dp" />
+
+                <TextView
+                    android:id="@+id/ch_8_text"
+                    style="@style/rc_textTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="摇杆 8: 1500" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.rey.material.widget.Button
+            android:id="@+id/Btn_Start"
+            style="@style/RaiseWaveColorButtonRippleStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="39dp"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="20dp"
+            android:text="校准遥控器"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
+            android:textColor="#ffffff"
+            app:rd_delayClick="afterRelease" />
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/step4Calibration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_edittext"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="校准状态"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+</org.farring.gcs.view.CustomerScrollView>

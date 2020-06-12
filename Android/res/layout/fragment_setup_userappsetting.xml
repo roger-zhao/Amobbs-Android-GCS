@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<org.farring.gcs.view.CustomerScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:orientation="vertical">
+
+        <org.farring.gcs.view.spinnerWheel.CardWheelHorizontalView
+            android:id="@+id/flyWidePicker"
+            style="@style/missionItemDetailCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="航线宽度：米" />
+
+        <org.farring.gcs.view.spinnerWheel.CardWheelHorizontalView
+            android:id="@+id/spinnerSpdPicker"
+            style="@style/missionItemDetailCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="喷头油门比例：%" />
+
+        <org.farring.gcs.view.spinnerWheel.CardWheelHorizontalView
+            android:id="@+id/pumpSpdPicker"
+            style="@style/missionItemDetailCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="水泵油门比例：%" />
+
+    </LinearLayout>
+
+</org.farring.gcs.view.CustomerScrollView>

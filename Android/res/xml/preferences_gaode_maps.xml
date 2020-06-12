@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="高德地图偏好设定"/>
+
+        <ListPreference
+            android:defaultValue="satellite"
+            android:entries="@array/MapTypes"
+            android:entryValues="@array/MapTypeValues"
+            android:key="pref_map_type"
+            android:summary="@string/pref_map_type_summary"
+            android:title="@string/pref_map_type"/>
+
+</PreferenceScreen>

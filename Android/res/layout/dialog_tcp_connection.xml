@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pref_server_ip"
+        android:textColor="#80000000"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/tcpConnectionIP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="@string/pref_server_port"
+        android:textColor="#80000000"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/tcpConnectionPort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:inputType="numberDecimal"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+</LinearLayout>

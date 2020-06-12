@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_cloudSync_tlogs"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_cloud_upload_grey_700_24dp"
+        android:title="云同步" />
+
+    <item
+        android:id="@+id/menu_dshare_logout"
+        android:title="@string/label_logout"
+        android:icon="@drawable/ic_exit_to_app_grey_700_24dp"
+        app:showAsAction="always"/>
+</menu>

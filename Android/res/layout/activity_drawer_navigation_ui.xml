@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:openDrawer="start">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/content_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <org.farring.gcs.view.FitsSystemWindowsFrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:fitsSystemWindows="true">
+
+            <org.farring.gcs.view.SlidingDrawer
+                android:id="@+id/action_drawer_container"
+                android:layout_width="@dimen/action_drawer_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginBottom="@dimen/action_drawer_margin_bottom"
+                android:minWidth="170dp"
+                android:orientation="horizontal"
+                app:content="@+id/action_drawer_content"
+                app:handle="@+id/slideButtonLeft">
+
+                <View
+                    android:id="@+id/slideButtonLeft"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false" />
+
+                <FrameLayout
+                    android:id="@+id/action_drawer_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </org.farring.gcs.view.SlidingDrawer>
+        </org.farring.gcs.view.FitsSystemWindowsFrameLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/navigation_drawer"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/navigation_drawer_view"
+            android:layout_width="230dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/nav_header_main"
+            app:menu="@menu/navigation_drawer_items" />
+    </LinearLayout>
+</android.support.v4.widget.DrawerLayout>

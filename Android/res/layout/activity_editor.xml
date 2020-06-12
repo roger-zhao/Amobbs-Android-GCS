@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <FrameLayout
+        android:id="@+id/editor_map_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_gesture_map" />
+
+    <org.farring.gcs.view.FitsSystemWindowsRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/actionbar_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/editor_bar"
+            android:gravity="center_vertical|start"
+            app:popupTheme="@style/CustomActionBarTheme.PopupOverlay"
+            app:theme="@style/CustomActionBarTheme.AppBarOverlay">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_launcher"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/editor_edit_btn"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="4dp"
+                    android:src="@drawable/editor_icon" />
+
+                <ImageView
+                    android:id="@+id/editor_setting_btn"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="16dp"
+                    android:padding="4dp"
+                    android:src="@drawable/setting_icon" />
+
+                <FrameLayout
+                    android:id="@+id/editor_status_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+
+        <FrameLayout
+            android:id="@+id/editor_map_details"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="60dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="80dp"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="48dp"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/toggle_action_drawer_left"
+                android:layout_width="match_parent"
+                android:layout_height="11dp"
+                android:gravity="center"
+                 android:text="实时数据"
+                android:background="@color/white"
+                android:visibility="visible" />
+
+            <FrameLayout
+                android:id="@+id/flight_widgets_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="72dp"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/toggle_action_drawer"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/editor_button_bg_selector"
+                android:src="@drawable/ic_flip" />
+
+        <FrameLayout
+            android:id="@+id/flight_tool_container"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+           />
+        </LinearLayout>
+        <FrameLayout
+            android:id="@+id/flight_control_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="40dp" />
+
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/editorInfoWindow"
+            style="@style/editorMissionOverviewText"
+            android:layout_width="match_parent"
+            android:layout_height="13dp"
+            android:layout_alignLeft="@+id/actionbar_container"
+            android:layout_alignStart="@+id/actionbar_container"
+            android:layout_below="@+id/actionbar_container"
+            android:gravity="end"
+            android:singleLine="true"
+            android:textSize="10dp"
+            android:visibility="visible"
+            tools:text="@string/editor_info_window" />
+
+        <include
+            layout="@layout/button_my_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/actionbar_container"
+            android:layout_alignStart="@+id/actionbar_container"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_below="@+id/editorInfoWindow"
+            android:visibility="visible" />
+
+
+        <fragment
+            android:id="@+id/mission_list_fragment"
+            android:name="org.farring.gcs.fragments.EditorListFragment"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            tools:layout="@layout/fragment_editor_list" />
+
+        <FrameLayout
+            android:id="@+id/editor_setting"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="48dp"
+            android:background="@color/white"
+            android:visibility="gone" />
+
+    </org.farring.gcs.view.FitsSystemWindowsRelativeLayout>
+
+</RelativeLayout>

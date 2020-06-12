@@ -1,0 +1,66 @@
+C:\Users\foennox\.android>keytool -list -v -keystore debug.keystore
+输入密钥库口令:
+
+密钥库类型: JKS
+密钥库提供方: SUN
+
+您的密钥库包含 1 个条目
+
+别名: androiddebugkey
+创建日期: 2018-2-12
+条目类型: PrivateKeyEntry
+证书链长度: 1
+证书[1]:
+所有者: C=US, O=Android, CN=Android Debug
+发布者: C=US, O=Android, CN=Android Debug
+序列号: 1
+有效期开始日期: Mon Feb 12 17:56:53 CST 2018, 截止日期: Wed Feb 05 17:56:53 CST 2048
+证书指纹:
+         MD5: AD:50:6F:C5:D1:3B:31:88:97:65:5C:BF:FE:9D:32:E2
+         SHA1: 21:A5:FF:B2:2C:9C:AD:53:26:0B:1F:57:F8:79:0F:BC:84:19:17:BA
+         SHA256: C6:6B:2D:FA:C5:BD:5B:4A:18:FE:F3:49:4F:C1:0A:EF:63:09:12:D0:04:AA:80:5A:DC:55:15:D9:24:9E:BE:F9
+         签名算法名称: SHA1withRSA
+         版本: 1
+
+
+*******************************************
+*******************************************
+
+C:\Users\foennox\.android>keytool -list -v -keystore e:\Working\Farring-APP\F-APP.jks
+输入密钥库口令:
+
+密钥库类型: JKS
+密钥库提供方: SUN
+
+您的密钥库包含 1 个条目
+
+别名: key0
+创建日期: 2018-3-17
+条目类型: PrivateKeyEntry
+证书链长度: 1
+证书[1]:
+所有者: CN=roger zhao
+发布者: CN=roger zhao
+序列号: 76468a46
+有效期开始日期: Sat Mar 17 13:02:33 CST 2018, 截止日期: Wed Mar 11 13:02:33 CST 2043
+证书指纹:
+         MD5: E2:D1:2D:9D:94:93:8F:DC:3F:A0:84:55:E1:EB:03:E3
+         SHA1: 4E:AB:C3:56:5A:92:F5:8E:5B:9F:D6:58:8C:39:C7:A3:E5:BF:81:C9
+         SHA256: 3E:FD:7F:18:91:6A:DD:30:3C:09:7C:C1:48:9C:D3:EF:5D:71:69:D2:E0:E7:BA:81:15:AA:41:B8:EC:83:BE:47
+         签名算法名称: SHA256withRSA
+         版本: 3
+
+扩展:
+
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: 04 1D 4A A1 E2 1D DA A4   86 64 D6 B3 DF 4A 25 5F  ..J......d...J%_
+0010: 64 A5 EE 51                                        d..Q
+]
+]
+
+
+
+*******************************************
+*******************************************

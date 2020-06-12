@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/location_button_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/my_location_button"
+        style="@style/Fab.MyLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_location" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/drone_location_button"
+        style="@style/Fab.MyLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_navigate" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/zoom_to_fit_button"
+        style="@style/Fab.MyLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_expand"
+        android:visibility="gone"
+        tools:visibility="gone" />
+
+    <Button
+        android:id="@+id/clear_mission_button"
+        style="@style/flightControlButton.Row"
+        android:text="清除任务" />
+    <Button
+        android:id="@+id/lidar_enable_button"
+        style="@style/flightControlButton.Row"
+        android:text="雷达状态" />
+</LinearLayout>

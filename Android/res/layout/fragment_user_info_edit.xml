@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.farring.gcs.view.CustomerScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/user_icon_view"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="头像"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/user_icon"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_launcher" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#999999" />
+
+        <RelativeLayout
+            android:id="@+id/user_name_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:minHeight="48dp"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/name_Text"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="12dp"
+                android:text=""
+                android:textColor="#ff222222"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/name_Info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/name_Text"
+                android:layout_toRightOf="@+id/name_Text"
+                android:ellipsize="end"
+                android:gravity="right"
+                android:text="@string/app_title"
+                android:textColor="#999999"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </LinearLayout>
+</org.farring.gcs.view.CustomerScrollView>

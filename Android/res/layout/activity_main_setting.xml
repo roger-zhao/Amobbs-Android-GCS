@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/opaque_white"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_height="0.5dp"
+            android:background="@color/dark_grey"/>
+        <TextView
+            android:id="@+id/btn1"
+            android:layout_width="30dp"
+            android:layout_height="100dp"
+            android:padding="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:background="@color/green"
+            android:text="飞控设置"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_height="0.5dp"
+            android:background="@color/dark_grey"/>
+
+        <TextView
+            android:id="@+id/btn2"
+            android:layout_width="30dp"
+            android:layout_height="100dp"
+            android:padding="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="应用设置"
+            android:background="@color/bottom_top_bar"
+            />
+
+        <TextView
+            android:id="@+id/btn3"
+            android:layout_width="30dp"
+            android:layout_height="102dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/bottom_top_bar"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="软件设置" />
+
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <FrameLayout
+            android:id="@+id/settings_fl1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <FrameLayout
+            android:id="@+id/settings_fl2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            />
+        <FrameLayout
+            android:id="@+id/settings_fl3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            />
+
+    </FrameLayout>
+
+
+</LinearLayout>

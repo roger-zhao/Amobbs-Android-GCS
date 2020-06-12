@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <org.farring.gcs.view.spinnerWheel.WheelHorizontalView
+        android:id="@+id/horizontalSpinnerWheel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:isAllVisible="false"
+        app:isCyclic="false"
+        app:itemsDimmedAlpha="150"
+        app:selectionDivider="@android:color/holo_blue_light"
+        app:selectionDividerActiveAlpha="100"
+        app:selectionDividerDimmedAlpha="255"
+        app:selectionDividerWidth="2dp"
+        app:visibleItems="3"
+        tools:layout_height="match_parent"
+        tools:layout_width="100dp" />
+
+    <EditText
+        android:id="@+id/numberInputText"
+        style="@style/missionItemNumberPickerView"
+        android:layout_width="80dp"
+        android:layout_gravity="center"
+        android:imeOptions="actionDone"
+        android:inputType="numberSigned|numberDecimal"
+        android:visibility="invisible"
+        tools:text="22" />
+</FrameLayout>

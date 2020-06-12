@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/missionItemDetailLayout">
+
+    <org.farring.gcs.view.spinners.SpinnerSelfSelect
+        android:id="@+id/spinnerWaypointType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="5dp"
+        android:entries="@array/ExampleWaypointType" />
+
+    <TextView
+        android:id="@+id/WaypointType"
+        style="@style/missionHeaderTitle"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/wp_title_rectangle"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:text="@string/label_mission_item_type_selection"
+        android:textAllCaps="true" />
+
+    <ImageView
+        android:id="@+id/menuHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/WaypointType"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_menu_hint" />
+
+    <TextView
+        android:id="@+id/mission_item_type_selection_description"
+        style="@style/ModeDetailText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/WaypointType"
+        android:background="@drawable/mode_desc_rectangle"
+        android:text="@string/description_mission_item_type_selection" />
+
+</RelativeLayout>

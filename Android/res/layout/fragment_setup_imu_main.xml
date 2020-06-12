@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#99CCFF">
+
+        <TextView
+            android:id="@+id/textViewIMUStep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/bg_bt_raise_color"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/setup_imu_step"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:visibility="gone"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewIMUTimeOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/progressBarTimeOut"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="校准等待时间: 30秒"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ProgressBar
+            android:id="@+id/progressBarTimeOut"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="29dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:indeterminate="false"
+            android:max="300"
+            android:minHeight="50dp"
+            android:minWidth="300dp"
+            android:progress="150"
+            android:progressDrawable="@drawable/pstate_good" />
+
+
+        <TextView
+            android:id="@+id/TextViewIMUOffset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/TextViewIMUScaling"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="b值 : 00 00 00"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/TextViewIMUScaling"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextViewIMUOffset"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="k值 : 00 00 00"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textViewDesc"
+        style="@style/ModeDetailText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/mode_desc_rectangle"
+        android:padding="10dp"
+        android:visibility="gone"
+        android:text="@string/setup_imu_start" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/buttonStep"
+            style="@style/modeControl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_bt_raise_color"
+            android:padding="8dp"
+            android:text="@string/button_setup_calibrate" />
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<org.farring.gcs.view.CustomerScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView style="@style/SettingCardView"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/ViewContainer_Connection"
+                    android:visibility="visible"
+                    style="@style/SettingViewContainer">
+
+                    <ImageView
+                        style="@style/SettingViewIcon"
+                        android:src="@drawable/ic_connect_active" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:visibility="visible"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/SettingViewTitleV"
+                            android:text="@string/pref_connection_type" />
+
+                        <TextView
+                            style="@style/SettingViewSubtitleV"
+                            android:text="@string/pref_connection_type_summary" />
+                    </LinearLayout>
+
+                    <ImageView style="@style/SettingViewArrow" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView style="@style/SettingCardView"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/tower_widgets"
+                    android:visibility="gone"
+                    style="@style/SettingViewContainer">
+
+                    <ImageView
+                        style="@style/SettingViewIcon"
+                        android:src="@drawable/ic_action_navigate_blue" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/SettingViewTitleV"
+                            android:text="@string/pref_tower_widgets_category" />
+
+                        <TextView
+                            style="@style/SettingViewSubtitleV"
+                            android:text="@string/pref_tower_widgets_title" />
+                    </LinearLayout>
+
+                    <ImageView style="@style/SettingViewArrow" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView style="@style/SettingCardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ViewContainer_Provider"
+                        style="@style/SettingViewContainer">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/SettingViewTitleV"
+                                android:text="@string/pref_maps_providers_title" />
+
+                            <me.grantland.widget.AutofitTextView
+                                android:id="@+id/providerNameText"
+                                style="@style/SettingViewSubtitleV"
+                                android:singleLine="true"
+                                android:text="高德地图" />
+                        </LinearLayout>
+
+                        <ImageView style="@style/SettingViewArrow" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/setting_view_item_subtitle_text" />
+
+                    <LinearLayout
+                        android:id="@+id/ViewContainer_MapSetting"
+                        android:visibility="gone"
+
+                        style="@style/SettingViewContainer">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/SettingViewTitleV"
+                                android:text="@string/pref_map_provider_settings_title" />
+
+                            <me.grantland.widget.AutofitTextView
+                                style="@style/SettingViewSubtitleV"
+                                android:singleLine="true"
+                                android:text="@string/pref_map_provider_settings_summary" />
+                        </LinearLayout>
+
+                        <ImageView style="@style/SettingViewArrow" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView style="@style/SettingCardView"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/setting_view_item_selector">
+
+                        <TextView
+                            style="@style/SettingViewTextV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="center"
+                            android:text="@string/pref_unit_system_title"
+                            android:textColor="@color/setting_view_item_title_text"
+                            android:textSize="16sp" />
+
+                        <org.farring.gcs.view.button.SpringSwitchButton
+                            android:id="@+id/unit_type"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            app:backRectColor="#46A3FF"
+                            app:leftText="公制"
+                            app:rightText="英制"
+                            app:textCheckedColor="#FFFFFF"
+                            app:textSize="16sp"
+                            app:textUnCheckedColor="#46A3FF" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView style="@style/SettingCardView"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ViewContainer_Speech_OpenClose"
+                        style="@style/SettingViewContainer">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center|left"
+                            android:paddingLeft="10dp"
+                            android:text="@string/pref_enable_tts"
+                            android:textColor="@color/setting_view_item_title_text"
+                            android:textSize="16sp" />
+
+                        <org.farring.gcs.view.button.ToggleButton
+                            android:id="@+id/ttsToggleButton"
+                            android:layout_width="54dp"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="15dp"
+                            app:onColor="#46A3FF">
+
+                        </org.farring.gcs.view.button.ToggleButton>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/setting_view_item_subtitle_text" />
+
+                    <LinearLayout
+                        android:id="@+id/ViewContainer_Speech_Period"
+                        android:visibility="gone"
+                        style="@style/SettingViewContainer">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/SettingViewTitleV"
+                                android:text="周期广播设定" />
+
+                            <TextView
+                                android:id="@+id/tts_periodic_status_period"
+                                style="@style/SettingViewSubtitleV"
+                                android:text="30秒" />
+                        </LinearLayout>
+
+                        <ImageView style="@style/SettingViewArrow" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/setting_view_item_subtitle_text" />
+
+                    <LinearLayout
+                        android:id="@+id/ViewContainer_Speech"
+                        android:visibility="gone"
+                        style="@style/SettingViewContainer">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/SettingViewTitleV"
+                                android:text="选择发音人及语种" />
+
+                            <TextView
+                                android:id="@+id/TextView_speechType"
+                                style="@style/SettingViewSubtitleV"
+                                android:text="粤语" />
+                        </LinearLayout>
+
+                        <ImageView style="@style/SettingViewArrow" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!--高度设置-->
+            <android.support.v7.widget.CardView style="@style/SettingCardView"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ViewContainer_MaxAltitude"
+                        style="@style/SettingViewContainer">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/SettingViewTitleV"
+                                android:text="@string/pref_max_alt_title" />
+
+                            <TextView
+                                android:id="@+id/TextView_MaxAltitude"
+                                style="@style/SettingViewSubtitleV"
+                                android:text="200M" />
+                        </LinearLayout>
+
+                        <ImageView style="@style/SettingViewArrow" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/setting_view_item_subtitle_text" />
+
+                    <LinearLayout
+                        android:id="@+id/ViewContainer_MinAltitude"
+                        style="@style/SettingViewContainer">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/SettingViewTitleV"
+                                android:text="@string/pref_min_alt_title" />
+
+                            <TextView
+                                android:id="@+id/TextView_MinAltitude"
+                                style="@style/SettingViewSubtitleV"
+                                android:text="0M" />
+                        </LinearLayout>
+
+                        <ImageView style="@style/SettingViewArrow" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/setting_view_item_subtitle_text" />
+
+                    <LinearLayout
+                        android:id="@+id/ViewContainer_DefaultAltitude"
+                        style="@style/SettingViewContainer">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/SettingViewTitleV"
+                                android:text="@string/pref_default_alt_title" />
+
+                            <TextView
+                                android:id="@+id/TextView_DefaultAltitude"
+                                style="@style/SettingViewSubtitleV"
+                                android:text="20.0M" />
+                        </LinearLayout>
+
+                        <ImageView style="@style/SettingViewArrow" />
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <!--关于我们-->
+            <android.support.v7.widget.CardView style="@style/SettingCardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ViewContainer_VersionUpdate"
+                        style="@style/SettingViewContainer">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/SettingViewTitleV"
+                                android:text="地面站版本" />
+
+                            <TextView
+                                android:id="@+id/TextView_AppVersion"
+                                style="@style/SettingViewSubtitleV"
+                                android:text="Version 1.0.0" />
+                        </LinearLayout>
+
+                        <ImageView style="@style/SettingViewArrow" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/setting_view_item_subtitle_text" />
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        style="@style/SettingViewContainer">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/SettingViewTitleV"
+                                android:text="@string/firmware_version" />
+
+                            <TextView
+                                android:id="@+id/TextView_FirmwareVersion"
+                                style="@style/SettingViewSubtitleV"
+                                android:text="Quad(356245)" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/setting_view_item_subtitle_text" />
+
+                    <LinearLayout
+                        android:id="@+id/ViewContainer_helperDocument"
+                        style="@style/SettingViewContainer">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/SettingViewTitleV"
+                                android:text="关于" />
+
+                            <TextView
+                                style="@style/SettingViewSubtitleV"
+                                android:text="西安远智电子科技有限公司（2017） " />
+                        </LinearLayout>
+
+                        <ImageView style="@style/SettingViewArrow" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+        <FrameLayout
+            android:id="@+id/connect_setting"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:visibility="gone"
+            />
+
+    </FrameLayout>
+
+
+
+</org.farring.gcs.view.CustomerScrollView>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textViewESCGrantee"
+        style="@style/ModeDetailText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/mode_desc_rectangle"
+        android:padding="10dp"
+        android:ellipsize="end"
+        android:maxLines="6"
+        android:text="校准流程：
+        1.点击 校准电调 后，将飞控电源、动力电源关闭; 2.重新将动力电源、飞控电源依次开启; 3.等待飞控自动校准电调; 4.在确认电调发出校准成功的声音后，将飞行器飞控电源、动力电源关闭，电调校准完成" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnESCali"
+            style="@style/modeControl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_bt_raise_color"
+            android:padding="10dp"
+            android:text="校准电调" />
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<org.farring.gcs.view.CustomerScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:orientation="vertical">
+
+        <org.farring.gcs.view.spinnerWheel.CardWheelHorizontalView
+            android:id="@+id/flyVelMaxPicker"
+            style="@style/missionItemDetailCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="巡航速度：米/秒" />
+
+        <android.support.v7.widget.CardView style="@style/SettingCardView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/setting_view_item_selector">
+
+                <TextView
+                    style="@style/SettingViewTextV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center"
+                    android:text="机头模式"
+                    android:textColor="@color/setting_view_item_title_text"
+                    android:textSize="16sp" />
+
+                <org.farring.gcs.view.button.SpringSwitchButton
+                    android:id="@+id/flyYawBehavior"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    app:backRectColor="#46A3FF"
+                    app:leftText="机头跟随航线"
+                    app:rightText="机头保持不变"
+                    app:textCheckedColor="#FFFFFF"
+                    app:textSize="16sp"
+                    app:textUnCheckedColor="#46A3FF" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</org.farring.gcs.view.CustomerScrollView>

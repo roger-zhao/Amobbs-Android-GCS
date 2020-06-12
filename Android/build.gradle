@@ -1,0 +1,193 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+//apply plugin: 'android-apt'
+
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:multidex:1.0.1'
+    // Google地图
+    compile "com.google.android.gms:play-services-maps:${play_services_version}"
+    compile "com.android.support:support-v4:${support_lib_version}"
+    compile "com.android.support:appcompat-v7:${support_lib_version}"
+    compile "com.android.support:cardview-v7:${support_lib_version}"
+    compile "com.android.support:recyclerview-v7:${support_lib_version}"
+    compile "com.android.support:design:${support_lib_version}"
+    compile 'me.grantland:autofittextview:0.2.1'
+    compile(name: 'shimmer-android-release', ext: 'aar')
+    // UVC视频支持
+    compile(name: 'libuvccamera-release', ext: 'aar')
+    // Sius is a library for SI unit conversion. It is statically typed to prevent computations with uncompatible units at compile time.
+    compile files('libs/sius-0.3.0-SNAPSHOT.jar')
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    // Charts and graph library
+    compile 'com.github.lecho:hellocharts-library:1.5.8@aar'
+    compile(name: 'sliding-up-panel-3.3.0', ext: 'aar')
+    // 高德地图
+    compile files('libs/AMap_V2.7.0.jar')
+    // 讯飞云语音
+    compile files('libs/xfyunMsc_1102.jar')
+    // 腾讯Bugly
+    compile 'com.tencent.bugly:crashreport_upgrade:latest.release'
+    compile 'com.tencent.bugly:nativecrashreport:latest.release'
+    compile files('libs/d2xx.jar')
+    compile 'com.orhanobut:logger:1.15'
+    // 注解框架
+    compile 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    // 官方正品Eventbus
+    compile 'org.greenrobot:eventbus:3.0.0'
+    // 源自Facebook的控件
+    compile files('libs/facebookRebound-0.3.8.jar')
+    // Java SemVer is a Java implementation of the Semantic Versioning Specification (http://semver.org/).
+    compile 'com.github.zafarkhaja:java-semver:0.9.0'
+    // Dialog库
+    compile('com.github.afollestad.material-dialogs:core:0.8.5.6@aar') {
+        transitive = true
+    }
+    // numberprogressbar
+    compile 'com.daimajia.numberprogressbar:library:1.2@aar'
+    // 好看的ViewPager：https://github.com/astuetz/PagerSlidingTabStrip
+    compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
+    // 一个MaterialDesign的库
+    compile 'com.github.rey5137:material:1.2.4'
+    // 高德定位
+    compile files('libs/AMap_Location_V3.2.1.jar')
+    // LiteOrm is a fast, small, powerful ORM framework for Android.
+    compile files('libs/lite-orm-1.9.2.jar')
+    // A swipe menu for RecyclerView, extend from SwipeMenuListView.
+    compile 'com.tubb.smrv:swipemenu-recyclerview:3.0.7'
+    // bmob-sdk：Bmob的android sdk包
+    compile 'com.squareup.okhttp3:okhttp:3.3.1'
+    compile files('libs/BmobSDK_V3.4.7.jar')
+    // 内存溢出检测
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+}
+
+//Decomposed version name and code (https://plus.google.com/+JakeWharton/posts/6f5TcVPRZij)
+def versionMajor = 1
+def versionMinor = 1
+def versionPatch = 0
+def versionBuild = 1 // bump for dogfood builds, public betas, etc.
+
+android {
+    compileSdkVersion android_build_sdk_version
+    buildToolsVersion android_build_tools_version
+
+    useLibrary 'org.apache.http.legacy'
+
+    defaultConfig {
+        applicationId 'org.farring.gcs'
+        minSdkVersion android_build_min_sdk_version
+        targetSdkVersion android_build_target_sdk_version
+        versionCode versionMajor * 100000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
+        versionName "v${versionMajor}.${versionMinor}.${versionPatch}"
+
+        // Enabling multidex support.dex突破65535的限制，启用multidex分包功能
+        multiDexEnabled true
+
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi', 'x86', 'armeabi-v7a', 'arm64-v8a'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    // 为了解决部分第三方库重复打包了META-INF的问题
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+
+            jni.srcDirs = ['src/main/jni', 'src/main/jni/']
+            jniLibs.srcDirs = ['jniLibs']
+        }
+
+        // Move the build types to build-types/<type>
+        // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
+        // This moves them out of them default location under src/<type>/... which would
+        // conflict with src/ being used by the main source set.
+        // Adding new build types or product flavors should be accompanied
+        // by a similar customization.
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+
+    // 执行lint检查，有任何的错误或者警告提示，都会终止构建，我们可以将其关掉。
+    lintOptions {
+        abortOnError false
+        disable 'InvalidPackage'
+    }
+
+    // 签名
+    signingConfigs {
+        relealse {
+            storeFile file("F-APP.jks")
+            storePassword "Farring123"
+            keyAlias "key0"
+            keyPassword "Farring123"
+        }
+    }
+
+//    android.applicationVariants.all { variant ->
+//        variant.outputs.each { output ->
+//            def file = output.outputFile
+//            if (file != null && file.name.endsWith('.apk')) {
+//                def buildType = variant.buildType.getName()
+//                def versionCode = defaultConfig.versionCode
+//                output.outputFile = new File(file.parent, "FarringGCS-${buildType}.${versionCode}.apk")
+//            }
+//        }
+//    }
+
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "远智地面站_${defaultConfig.versionName}.apk"
+        }
+    }
+
+    dexOptions { javaMaxHeapSize "4g" }
+
+    buildTypes {
+        // Debug版本
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix ".debug.${versionBuild}"
+            resValue "string", "app_title", "远智调试"
+        }
+
+        // Release版本
+        release {
+            // 是否开启混淆
+            // minifyEnabled true
+            // 去除无用的resource文件
+            shrinkResources false
+            // 加载混淆配置文件--前一部分代表系统默认的android程序的混淆文件，该文件已经包含了基本的混淆声明
+            // proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
+            // Zipalign优化
+            zipAlignEnabled true
+            // 签名
+            signingConfig signingConfigs.relealse
+            resValue "string", "app_title", "远智地面站"
+        }
+    }
+    buildToolsVersion '26.0.2'
+}
+
+apply plugin: 'kotlin-android-extensions'
